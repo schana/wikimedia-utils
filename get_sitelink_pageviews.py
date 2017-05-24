@@ -18,5 +18,5 @@ grep -e '^[a-z]*\.z ' --color=no pagecounts-2017-04-views-ge-5-totals | sed 's/\
 pagecounts = pd.read_csv('pagecounts.ssv', sep=' ')
 sitelinks = pd.read_csv('sitelinks.tsv', sep='\t')
 merged = pd.merge(sitelinks, pagecounts, on=['site', 'title'])
-merged.to_csv('sitelinks-pagecounts.csv')
+merged.to_csv('sitelinks-pagecounts.tsv', sep='\t')
 
