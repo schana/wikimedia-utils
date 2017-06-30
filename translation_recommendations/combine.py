@@ -9,5 +9,5 @@ for wiki in sys.argv[2:]:
     merged = pd.merge(merged, next_wiki, on='id', how='outer')
 
 print 'merging'
-merged.to_csv('all_predictions.csv', index=False)
+merged.to_csv('all_predictions.csv', index=False, compression='bz2')
 
