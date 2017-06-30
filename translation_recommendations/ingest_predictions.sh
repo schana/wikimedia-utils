@@ -13,7 +13,7 @@ column_names=$(echo $columns | sed 's/,/ decimal, /g')
 run_command "create table predictions (id varchar, $column_names decimal);"
 
 run_command "\copy predictions from '$(realpath $1)' header delimiter ',' csv;"
-for c in $columns
+for c in $(echo $columns | sed 's/,/ /g')
 do
   run_command "create index on predictions ($c);"
 done
