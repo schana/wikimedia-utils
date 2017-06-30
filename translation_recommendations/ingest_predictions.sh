@@ -1,8 +1,8 @@
 #!/bin/bash
 
 function run_command {
-  # psql test -c $1
-  echo $1
+  echo "$1"
+  psql test -c "$1"
 }
 
 run_command "drop table if exists predictions;"
